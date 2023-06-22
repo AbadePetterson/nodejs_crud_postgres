@@ -1,5 +1,7 @@
+require('dotenv').config();
+
 const { Pool } = require('pg');
-const conString = "postgres://lrvcugkz:XpTAaYcSpJUG1Ik0xwbtjUw0hTp7B4zo@silly.db.elephantsql.com/lrvcugkz" //Can be found in the Details page
+const conString = process.env.DATABASE_URL;
 const pool = new Pool({connectionString: conString});
 
 pool.connect(function(err) {
